@@ -7,6 +7,12 @@ require('nav.php');
     $result=mysqli_query($connect,$sql);
 
     $row=mysqli_fetch_assoc($result);
+
+    $student_id=$_GET["student_id"];
+    $sql ="SELECT * FROM student WHERE student_id = $student_id";
+    $result=mysqli_query($connect,$sql);
+
+    $row2=mysqli_fetch_assoc($result);
 ?>
 <div class="content">
     <div class="container my-3">
