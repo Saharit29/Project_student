@@ -10,9 +10,7 @@ $row = mysqli_fetch_array($result);
 $sql2 = "select * from branch where student_id = '" . $row["student_id"] . "';";
 $result2 = mysqli_query($connect, $sql2);
 $branch = mysqli_fetch_array($result2);
-
 ?>
-
 
 <div class="content">
     <h3>คุณคือนักศึกษา</h3>
