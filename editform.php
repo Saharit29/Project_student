@@ -5,8 +5,11 @@ require('nav.php');
 $student_id = $_GET["student_id"];
 $sql = "SELECT * FROM student WHERE student_id = $student_id";
 $result = mysqli_query($connect, $sql);
-
 $row = mysqli_fetch_assoc($result);
+
+$sqlBranch = "SELECT * FROM branch WHERE student_id = $student_id";
+$resultBranch =  mysqli_query($connect, $sqlBranch);
+$Branch = mysqli_fetch_assoc($resultBranch);
 
 $sqlAgency = "SELECT * FROM agencytrain WHERE id='" . $row['agencytrain_id'] . "';";
 $resultAgencytrain =  mysqli_query($connect, $sqlAgency);
@@ -18,7 +21,7 @@ $agencytrain = mysqli_fetch_assoc($resultAgencytrain);
         <h2>แบบฟอร์มฝึกประสบการณ์</h2>
         <br>
         <form action="Insert.php" method="POST" class="row g-3">
-         
+
             <h5>เรียน คณะกรรมการการฝึกประสบการณ์วิชาชีพคอมพิวเตอร์</h5>
             <div class="col-md-2">
                 <label for="name">ข้าพเจ้า</label>
@@ -38,13 +41,13 @@ $agencytrain = mysqli_fetch_assoc($resultAgencytrain);
             </div>
             <div class="col-md-2">
                 <label for="subdistrict">สาขาวิชา</label>
-                <input type="text" id="branch_name" name="branch_name" class="form-control" value="<?php echo $row['branch'] ?>" readonly>
+                <input type="text" id="branch_name" name="branch_name" class="form-control" value="<?php echo $Branch['branch_name'] ?>" readonly>
             </div>
-       
             <div class="col-md-3">
-                <label for="agency_name">มีความประสงค์จะขอฝึกประสบการณ์วิชาที่</label>
-                <input type="text" id="agency_name" name="agency_name" class="form-control">
+                <label for="subdistrict">มีความประสงค์จะขอฝึกประสบการณ์วิชาที่</label>
+                <input type="text" id="agency_name" name="agency_name" class="form-control" value="<?php echo $agencytrain['agency_name'] ?>" readonly>
             </div>
+
             <h5>ซึ่งหน่วยงานดังกล่าวสังกัดภาค</h5>
             <div class="form-group">
                 <label for="region">สาขาวิชา</label>
