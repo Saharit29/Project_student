@@ -169,7 +169,7 @@ p {
 }
 </style>
 
-    <form action="Logindata.php" method="post">
+    <form action="./Logindata.php" method="post">
     <div class="login-box">
             <div class="imgcontainer">
                 <img src="https://campus.campus-star.com/app/uploads/2015/06/%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A5%E0%B8%B1%E0%B8%9A.jpg" alt="Avatar" class="avatar">

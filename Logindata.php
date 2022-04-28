@@ -16,7 +16,7 @@ session_start();
 
             $row = mysqli_fetch_array($result);
 
-            $_SESSION['user_id'] = $row['id'];
+            $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['username'] = $row['username'];
             $_SESSION['status'] = $row['status'];
             
@@ -24,7 +24,7 @@ session_start();
                 header("Location: Profile.php");
             }
             if ($_SESSION['status'] == 'teacher') {
-                header("Location: Profiletaa.php");
+                header("Location: Profile_teacher.php");
             }
             if ($_SESSION['status'] == 'admin') {
                 header("Location: admin.php");
