@@ -1,6 +1,6 @@
 <?php
 require('dbconnect.php');
-require('nav.php');
+require('navtea.php');
 
 $student_id = $_GET["student_id"];
 $sql = "SELECT * FROM student WHERE student_id = $student_id";
