@@ -2,6 +2,7 @@
 require('dbconnect.php');
 require('nav.php');
 
+
 $student_id = $_GET["student_id"];
 $sql = "SELECT * FROM student WHERE student_id = $student_id";
 $result = mysqli_query($connect, $sql);
